@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import CreatePostForm from './Components/CreatePostForm/CreatePostForm';
 import NavBar from "./Components/NavBar/NavBar";
-import Post from './Components/Post/Post';
 import PostList from './Components/PostList/PostList';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
 
 function App() {
 
@@ -17,9 +17,12 @@ function App() {
 
 
   return (
-    <div >
+    <div  >
       <NavBar />
-      <CreatePostForm addNewPost={addNewPost}/>
+      <div className='inputForm'>
+        <CreatePostForm addNewPost={addNewPost}/>
+      </div>
+      
       <PostList mainPostList ={posts}/>
 
     </div>

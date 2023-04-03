@@ -15,11 +15,7 @@ const Post = (props) => {
                 <p>{props.postProperty.textBody}</p>
                 <button>LIKE IMG</button>
             </div>
-        </form>
-
-
-
-    
+        </form>   
 
     );
 }

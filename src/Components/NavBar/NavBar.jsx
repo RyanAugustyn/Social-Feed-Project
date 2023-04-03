@@ -1,6 +1,8 @@
-const NavBar = (props) => {
+import './NavBar.css'
+
+const NavBar = () => {
     return ( 
-        <h3>yelling@<b>Strangers</b></h3>
+        <h3 className='navbar'>yelling@<b>Strangers</b></h3>
      );
 }
  

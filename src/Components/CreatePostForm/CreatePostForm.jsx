@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import './CreatePostForm.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const CreatePostForm = (props) => {
     const [userName, setUserName] = useState('');
@@ -14,17 +17,22 @@ const CreatePostForm = (props) => {
     }
 
     return ( 
-        <form onSubmit={handleSubmit} >
-            <div>
-                <label>Name</label>
-                <input type='text' value={userName} onChange={(event) => setUserName(event.target.value)}/>
-            </div>
-            <div>
-                <label>Post Here</label>
-                <input type='text' value={textBody} onChange={(event) =>setTextBody(event.target.value)}/>
-            </div>
-            <button type='submit'>Shout!</button>
-        </form>
+        <div>
+            <form onSubmit={handleSubmit} className='formBox'>
+                <div className='form-group'>
+                    <label>Name</label>
+                    <input type='text' className='form-control' value={userName} onChange={(event) => setUserName(event.target.value)}/>
+                </div>
+                <div className='form-group'>
+                    <label>Post Here</label>
+                    <input type='text' className='form-control' value={textBody} onChange={(event) =>setTextBody(event.target.value)}/>
+                    
+                </div>
+                <div>
+                    <button type='submit' className='btn btn-primary'>Shout!</button>
+                </div>
+            </form>
+        </div>
      );
 }
  

@@ -1,0 +1,12 @@
+.formBox{
+    display: flex;
+    border: solid;
+    padding: 2rem;
+    width: 50vw;
+    flex-direction: column;
+}
+
+.formGrouping {
+    display: flex;
+    justify-content: center;
+}
