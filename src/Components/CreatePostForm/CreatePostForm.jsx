@@ -10,7 +10,6 @@ const CreatePostForm = (props) => {
             userName: userName,
             textBody: textBody
         };
-        console.log(newPost);
         props.addNewPost(newPost);
     }
 

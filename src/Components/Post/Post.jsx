@@ -1,7 +1,6 @@
 //template of what the post will look like 
 
 import React, { useState } from 'react';
-import CreatePostForm from '../CreatePostForm/CreatePostForm';
 
 function handleSubmit(event){
     event.preventDefault();
@@ -9,12 +8,11 @@ function handleSubmit(event){
 
 const Post = (props) => {
 
-
     return ( 
         <form onSubmit={handleSubmit}>
             <div>
-                <h3>{props.userName}</h3>
-                <p>{props.textBody}</p>
+                <h3>{props.postProperty.userName}</h3>
+                <p>{props.postProperty.textBody}</p>
                 <button>LIKE IMG</button>
             </div>
         </form>

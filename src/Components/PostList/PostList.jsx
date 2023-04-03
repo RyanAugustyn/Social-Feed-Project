@@ -4,17 +4,15 @@ import Post from '../Post/Post';
 
 const PostList = (props) => {
 
-    //[entryList, setEntryList] = useState();
-
     return(
         <div>
-        {props.mainPostList.map((entry) => {
-            return(
-                <div>{entry}</div>
-            )})
-        }
+            {props.mainPostList.map((post, index) => {
+                return (
+                    <Post key={index} postProperty={post} />
+                );
+            })}
         </div>
-    );
+     );
 
     }
 

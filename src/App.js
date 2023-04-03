@@ -20,12 +20,10 @@ function App() {
     <div >
       <NavBar />
       <CreatePostForm addNewPost={addNewPost}/>
-      
+      <PostList mainPostList ={posts}/>
 
     </div>
   );
 }
 
 export default App;
-
-//<PostList mainPostList ={posts}/>
