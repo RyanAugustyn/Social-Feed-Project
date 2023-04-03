@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Post from '../Post/Post';
 
 
 const PostList = (props) => {
-    return ( 
-        <h1>Posts Here</h1>>
-     );
-}
+
+    //[entryList, setEntryList] = useState();
+
+    return(
+        <div>
+        {props.mainPostList.map((entry) => {
+            return(
+                <div>{entry}</div>
+            )})
+        }
+        </div>
+    );
+
+    }
+
+
  
 export default PostList;
 
