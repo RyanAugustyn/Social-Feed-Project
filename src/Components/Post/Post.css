@@ -7,9 +7,10 @@
 }
 
 .postBoxDiv{
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     margin: 5px;
+    
 }
 
 .postName{
@@ -17,11 +18,18 @@
 }
 
 .postText{
-    justify-content: center;
+    word-wrap: wrap;
+}
+
+.postBtns{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    
 }
 
 .postBtn{
-    justify-content: end;
-    width: 10rem;
+    margin: 3rem;
 }
+
 

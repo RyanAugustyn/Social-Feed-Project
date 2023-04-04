@@ -11,7 +11,6 @@ function App() {
 
   function addNewPost(post){
     let tempPosts = [post, ...posts];
-    console.log(tempPosts);
     setPosts(tempPosts);
   }
 

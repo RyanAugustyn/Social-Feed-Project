@@ -6,12 +6,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const CreatePostForm = (props) => {
     const [userName, setUserName] = useState('');
     const [textBody, setTextBody] = useState('');
+    const [postTime, setPostTime] = useState('');
 
     function handleSubmit(event){
         event.preventDefault();
+        let now = Date();
+        let time = now.toLocaleString();
+        time=time.substring(0, time.indexOf('-'));
         let newPost = {
             userName: userName,
-            textBody: textBody
+            textBody: textBody,
+            postTime: time
         };
         props.addNewPost(newPost);
     }
