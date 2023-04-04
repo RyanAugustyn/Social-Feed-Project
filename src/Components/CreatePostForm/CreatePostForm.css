@@ -2,11 +2,27 @@
     display: flex;
     border: solid;
     padding: 2rem;
-    width: 50vw;
+    width: 75vw;
     flex-direction: column;
+    box-shadow: 10px 5px 5px gray;
+    border-radius: 25px;
 }
 
 .formGrouping {
     display: flex;
     justify-content: center;
+}
+
+.textBoxGrouping{
+    height: 80px;
+    margin-bottom: 3rem;
+}
+
+.textBox{
+    height: 100;
+}
+
+.submitBtn{
+    justify-self: end;
+    color: red;
 }

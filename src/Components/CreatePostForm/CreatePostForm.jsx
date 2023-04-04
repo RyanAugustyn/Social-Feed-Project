@@ -23,13 +23,13 @@ const CreatePostForm = (props) => {
                     <label>Name</label>
                     <input type='text' className='form-control' value={userName} onChange={(event) => setUserName(event.target.value)}/>
                 </div>
-                <div className='form-group'>
+                <div className='form-group, textBoxGrouping'>
                     <label>Post Here</label>
-                    <input type='text' className='form-control' value={textBody} onChange={(event) =>setTextBody(event.target.value)}/>
+                    <input type='text' className='form-control' style={{height: 70}} value={textBody} onChange={(event) =>setTextBody(event.target.value)}/>
                     
                 </div>
                 <div>
-                    <button type='submit' className='btn btn-primary'>Shout!</button>
+                    <button type='submit' className='btn btn-primary submitBtn'>Shout!</button>
                 </div>
             </form>
         </div>

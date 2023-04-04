@@ -1,0 +1,27 @@
+.postBox{
+    border: solid;
+    padding: 2rem;
+    width: 75vw;
+    box-shadow: 10px 5px 5px gray;
+    border-radius: 25px;
+}
+
+.postBoxDiv{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: 5px;
+}
+
+.postName{
+    justify-content: start;
+}
+
+.postText{
+    justify-content: center;
+}
+
+.postBtn{
+    justify-content: end;
+    width: 10rem;
+}
+
