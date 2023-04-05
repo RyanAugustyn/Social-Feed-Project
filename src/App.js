@@ -14,16 +14,13 @@ function App() {
     setPosts(tempPosts);
   }
 
-
   return (
-    <div  >
+    <div  className='border'>
       <NavBar />
       <div className='inputForm'>
         <CreatePostForm addNewPost={addNewPost}/>
       </div>
-      
-      <PostList mainPostList ={posts}/>
-
+      <PostList mainPostList = {posts}/>
     </div>
   );
 }

@@ -13,6 +13,11 @@
     
 }
 
+.nameDate{
+    display: flex;
+    justify-content: space-between;
+}
+
 .postName{
     justify-content: start;
 }
@@ -24,7 +29,7 @@
 .postBtns{
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content: flex-end;
     
 }
 

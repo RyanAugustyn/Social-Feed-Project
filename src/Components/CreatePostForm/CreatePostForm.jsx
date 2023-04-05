@@ -6,7 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const CreatePostForm = (props) => {
     const [userName, setUserName] = useState('');
     const [textBody, setTextBody] = useState('');
-    const [postTime, setPostTime] = useState('');
+    const[toggleLike, setToggleLike] = useState(0);
+
 
     function handleSubmit(event){
         event.preventDefault();
@@ -16,9 +17,13 @@ const CreatePostForm = (props) => {
         let newPost = {
             userName: userName,
             textBody: textBody,
-            postTime: time
+            postTime: time, 
+            toggleLike: toggleLike,
+            toggleFunc: setToggleLike()
         };
         props.addNewPost(newPost);
+        setUserName('');
+        setTextBody('');
     }
 
     return ( 
@@ -42,6 +47,3 @@ const CreatePostForm = (props) => {
 }
  
 export default CreatePostForm;
-
-
-//2 input fields (name and body), each bound to its own state variable

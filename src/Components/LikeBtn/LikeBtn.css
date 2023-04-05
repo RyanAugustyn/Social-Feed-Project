@@ -1,3 +1,10 @@
 .likeBtn{
     margin-right: 1rem;
 }
+
+#likeBtn:active{
+    background-color: teal;
+}
+#likeBtn:focus{
+    background-color: teal;
+}
