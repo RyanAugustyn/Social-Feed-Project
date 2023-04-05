@@ -1,6 +1,3 @@
-#dislikeBtn:active{
-    background-color: red;
-}
-#dislikeBtn:focus{
+#dislikeBtn{
     background-color: red;
 }

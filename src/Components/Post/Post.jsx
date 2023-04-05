@@ -12,7 +12,9 @@ function handleSubmit(event){
 
 const Post = (props) => {
 
-    const [likeStatus, setLikeStatus] = useState(0);
+
+    const [likeStatus, setLikeStatus] = useState(false);
+    const[dislikeStatus, setDislikeStatus] = useState(false);
 
     
     return ( 
@@ -26,8 +28,8 @@ const Post = (props) => {
                     <p style={{whiteSpace: 'pre-wrap', overflowWrap: 'break-word'}}>{props.postProperty.textBody}</p>
                 </div>
                 <div className='postBtns'>
-                    <LikeBtn likeStatus={props.postProperty.toggleLike} setLikeStatus={props.postProperty.toggleFunc}/>
-                    <DislikeBtn likeStatus={props.postProperty.toggleLike} setLikeStatus={props.postProperty.toggleFunc}/>
+                    <LikeBtn likeStatus={likeStatus} setLikeStatus={setLikeStatus} dislikeStatus={dislikeStatus} setDislikeStatus={setDislikeStatus}/>
+                    <DislikeBtn dislikeStatus={dislikeStatus} setDislikeStatus={setDislikeStatus} likeStatus={likeStatus} setLikeStatus={setLikeStatus}/>
                 </div>
             </div>
         </form>   

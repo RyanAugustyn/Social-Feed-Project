@@ -3,25 +3,27 @@ import './DislikeBtn.css'
 
 const DislikeBtn = (props) => {
     const [dislike, setDislike] = useState(false);
+    const [color, setColor] = useState(false);
 
     
     function handleClick(){
-        props.setLikeStatus(2)
-        if(props.likeStatus === 1){
-            setDislike(false);
-        } else{
-            setDislike(!dislike);
-            
+        props.setDislikeStatus(!props.dislikeStatus);
+        if(props.likeStatus){
+            props.setLikeStatus(false);
         }
-        
-        console.log(props.likeStatus);
+        if(color == ''){
+            setColor('dislikeBtn');
+        }
+        else if(color == 'dislikeBtn'){
+            setColor('');
+        }
     }
 
     return ( 
         <div>
-            <button className='btn btn-primary' id='dislikeBtn'
+            <button className='btn btn-primary' id={color}
             onClick={handleClick}>
-                {dislike ? "DISLIKED!!!" : "Dislike?"}
+                {props.dislikeStatus ? "DISLIKED!!!" : "Dislike?"}
             </button>
         </div>
      );

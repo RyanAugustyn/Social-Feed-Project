@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const CreatePostForm = (props) => {
     const [userName, setUserName] = useState('');
     const [textBody, setTextBody] = useState('');
-    const[toggleLike, setToggleLike] = useState(0);
 
 
     function handleSubmit(event){
@@ -18,8 +17,6 @@ const CreatePostForm = (props) => {
             userName: userName,
             textBody: textBody,
             postTime: time, 
-            toggleLike: toggleLike,
-            toggleFunc: setToggleLike()
         };
         props.addNewPost(newPost);
         setUserName('');

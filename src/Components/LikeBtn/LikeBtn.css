@@ -2,9 +2,6 @@
     margin-right: 1rem;
 }
 
-#likeBtn:active{
-    background-color: teal;
-}
-#likeBtn:focus{
+#likeBtn{
     background-color: teal;
 }

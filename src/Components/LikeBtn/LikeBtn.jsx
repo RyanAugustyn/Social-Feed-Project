@@ -3,21 +3,25 @@ import './LikeBtn.css'
 
 const LikeBtn = (props) => {
     const [like, setLike] = useState(false);
+    const [color, setColor] = useState(false);
 
 
     function handleClick(){
-        props.setLikeStatus(1);
-        if(props.likeStatus === 2){
-            setLike(false);
-        } else{
-            setLike(!like);  
+        props.setLikeStatus(!props.likeStatus);
+        if(props.dislikeStatus){
+            props.setDislikeStatus(false);
         }
-        console.log(props.likeStatus);
+        if(color == ''){
+            setColor('likeBtn');
+        }
+        else if(color == 'likeBtn'){
+            setColor('');
+        }
     }
 
     return ( 
         <div className='likeBtn'>
-            <button className='btn btn-primary' id='likeBtn'
+            <button className='btn btn-primary' id={color}
             onClick={handleClick}>
                 {props.likeStatus ? "LIKED!" : "Like?"}
             </button>
