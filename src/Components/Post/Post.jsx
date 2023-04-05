@@ -1,4 +1,4 @@
-import React, {state, useState} from 'react';
+import React, {useState} from 'react';
 import './Post.css';
 import LikeBtn from '../LikeBtn/LikeBtn';
 import DislikeBtn from '../DislikeBtn/DislikeBtn';

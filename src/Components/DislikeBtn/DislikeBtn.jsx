@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './DislikeBtn.css'
 
 const DislikeBtn = (props) => {
-    const [dislike, setDislike] = useState(false);
     const [color, setColor] = useState(false);
 
     

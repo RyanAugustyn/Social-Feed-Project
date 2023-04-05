@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './LikeBtn.css'
 
 const LikeBtn = (props) => {
-    const [like, setLike] = useState(false);
     const [color, setColor] = useState(false);
 
 
