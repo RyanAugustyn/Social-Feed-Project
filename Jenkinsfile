@@ -55,8 +55,8 @@ pipeline {
                     sh """ 
                         SSH_COMMAND="ssh -o StrictHostKeyChecking=no ubuntu@54.211.106.154"
                         \$SSH_COMMAND "docker stop hosted-react-app && docker rm hosted-react-app"
-                        \$SSH_COMMAND "docker pull ryanaugustyn/react-jenkins-docker:$BUILD_NUMBER"
-                        \$SSH_COMMAND "docker run -d -p 80:80 --name hosted-react-app ryanaugustyn/react-jenkins-docker:$BUILD_NUMBER"
+                        \$SSH_COMMAND "docker pull ryanaugustyn/social-feed-jenkins-docker:$BUILD_NUMBER"
+                        \$SSH_COMMAND "docker run -d -p 80:80 --name hosted-react-app ryanaugustyn/social-feed-jenkins-docker:$BUILD_NUMBER"
 
                     """
                 }
