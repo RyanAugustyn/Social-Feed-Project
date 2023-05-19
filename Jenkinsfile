@@ -25,9 +25,9 @@ pipeline {
 
         stage('Build Docker Image'){
             steps { 
-                //added --name here
+                
                 sh """
-                    docker build --name hosted-react-app -t ryanaugustyn/react-jenkins-docker:$BUILD_NUMBER .
+                    docker build  -t ryanaugustyn/react-jenkins-docker:$BUILD_NUMBER .
                 """
             }
         }
