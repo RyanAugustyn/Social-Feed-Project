@@ -27,7 +27,7 @@ pipeline {
             steps { 
                 
                 sh """
-                    docker build  -t ryanaugustyn/react-jenkins-docker:$BUILD_NUMBER .
+                    docker build  -t ryanaugustyn/social-feed-jenkins-docker:$BUILD_NUMBER .
                 """
             }
         }
@@ -37,7 +37,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'personal-dockerhub-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]){
                 sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
                 }
-                sh "docker push ryanaugustyn/react-jenkins-docker:$BUILD_NUMBER"
+                sh "docker push ryanaugustyn/social-feed-jenkins-docker:$BUILD_NUMBER"
             }
         }
 
@@ -51,9 +51,9 @@ pipeline {
                 //Launch thtat new image running on our remote server
 
                 //using key from previous project on already running EC2 instance
-                sshagent(['music-library-linux-kp-ssh-credentials']){
+                sshagent(['social-feed-linux-kp-ssh-credentials']){
                     sh """ 
-                        SSH_COMMAND = "ssh -o StrictHostKeyChecking=no ubuntu@3.137.211.60"
+                        SSH_COMMAND = "ssh -o StrictHostKeyChecking=no ubuntu@54.211.106.154"
                         \$SSH_COMMAND "docker stop hosted-react-app && docker rm hosted-react-app"
                         \$SSH_COMMAND "docker pull ryanaugustyn/react-jenkins-docker:$BUILD_NUMBER"
                         \$SSH_COMMAND "docker run -d -p 80:80 --name hosted-react-app ryanaugustyn/react-jenkins-docker:$BUILD_NUMBER"
