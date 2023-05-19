@@ -50,7 +50,7 @@ pipeline {
                 //Pull the new image that was just pushed
                 //Launch thtat new image running on our remote server
 
-                //using key from previous project on already running EC2 instance
+
                 sshagent(['social-feed-linux-kp-ssh-credentials']){
                     sh """ 
                         SSH_COMMAND = "ssh -o StrictHostKeyChecking=no ubuntu@54.211.106.154"
