@@ -9,14 +9,14 @@ pipeline {
 
     stages {
 
-        stage('Installing Dependencies'){
+        stage('Install Dependencies'){
             steps {
 
                 sh 'npm install'
             }
         }
 
-        stage('Build Optimized React Production Files'){
+        stage('Create Optimized React Build'){
             steps {
 
                 sh 'npm run-script build'
@@ -24,23 +24,19 @@ pipeline {
         }
 
         stage('Build Docker Image'){
-            steps {
-  
+            steps { 
+                //added --name here
                 sh """
-                    docker build -t ryanaugustyn/react-jenkins-docker:$BUILD_NUMBER .
-                    docker images
+                    docker build --name hosted-react-app -t ryanaugustyn/react-jenkins-docker:$BUILD_NUMBER .
                 """
             }
         }
 
-        stage('Push Docker Image to Docker Hub'){
+        stage('Push Docker Image'){
             steps {
                 withCredentials([usernamePassword(credentialsId: 'personal-dockerhub-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]){
-
                 sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
-                
                 }
-
                 sh "docker push ryanaugustyn/react-jenkins-docker:$BUILD_NUMBER"
             }
         }
@@ -53,6 +49,8 @@ pipeline {
                 //Shut down the current running image
                 //Pull the new image that was just pushed
                 //Launch thtat new image running on our remote server
+
+                //using key from previous project on already running EC2 instance
                 sshagent(['music-library-linux-kp-ssh-credentials']){
                     sh """ 
                         SSH_COMMAND = "ssh -o StrictHostKeyChecking=no ubuntu@3.137.211.60"
